@@ -76,11 +76,12 @@ export const DynamicBreadcrumb = React.forwardRef<
             const isFirst = index === 0;
             const isEllipsisPosition = shouldShowEllipsis && index === 1;
             const isLast = index === pathSegments.length - 1;
+            const isLastBeforeEllipsis = shouldShowEllipsis && index === 2;
             const isVisible =
               !shouldShowEllipsis ||
               isFirst ||
               isLast ||
-              index === pathSegments.length - 2;
+              isLastBeforeEllipsis; // last segment before ellipsis
             /*
           Format label (remove dashes, capitalize), 
           but you can customize this letter 
