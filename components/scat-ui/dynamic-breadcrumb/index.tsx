@@ -8,16 +8,32 @@ import {
   BreadcrumbLink,
   BreadcrumbList,
   BreadcrumbPage,
-  BreadcrumbSeparator as DefaultSeparator,
 } from "@/components/ui/breadcrumb";
 import { cn } from "@/lib/utils";
+type IconProps = React.HTMLAttributes<SVGElement>;
 
-interface BaseProps {
+const ChevronRightIcon: React.FC<React.SVGProps<SVGElement>> = (
+  props: IconProps
+) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    fill="none"
+    stroke="currentColor"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    strokeWidth="2"
+    viewBox="0 0 24 24"
+    {...props}
+  >
+    <path d="m9 18 6-6-6-6"></path>
+  </svg>
+);
+
+interface BaseProps extends React.ComponentPropsWithoutRef<"nav"> {
   pathname: string;
   formatLabel?: (label: string) => string;
   separatorClassName?: string;
 }
-
 type DynamicBreadcrumbProps =
   | (BaseProps & {
       allowSeparator?: false;
@@ -25,24 +41,22 @@ type DynamicBreadcrumbProps =
     })
   | (BaseProps & {
       allowSeparator?: true;
-      Separator?: React.ForwardRefExoticComponent<
-        React.RefAttributes<SVGSVGElement>
-      >;
+      Separator?: (props: IconProps) => React.JSX.Element;
     });
 
 export const DynamicBreadcrumb = React.forwardRef<
   HTMLOListElement,
-  React.PropsWithoutRef<DynamicBreadcrumbProps> &
-    React.ComponentPropsWithoutRef<typeof Breadcrumb>
+  DynamicBreadcrumbProps
 >(
   (
     {
       pathname,
       className,
+
       allowSeparator: separator = true,
       formatLabel,
-      Separator = DefaultSeparator,
-      separatorClassName,
+      Separator = ChevronRightIcon,
+      separatorClassName = "w-3.5 h-3.5",
       ...props
     },
     ref
@@ -104,7 +118,9 @@ export const DynamicBreadcrumb = React.forwardRef<
                allowing flexibility of your own styles.
                example: <DynamicBreadcrumb Separator={YourCustomSeparator} />
                */
+               <BreadcrumbItem>
                   <Separator className={cn(separatorClassName)} />
+               </BreadcrumbItem>
                 )}
               </React.Fragment>
             );

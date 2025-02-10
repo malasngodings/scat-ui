@@ -10,10 +10,8 @@ export default function DynamicBreadCrumbPage() {
     <div>
       <div className="flex flex-row items-center gap-3">
         <h1 className="text-base text-muted-foreground font-semibold">
-          Try to change you path between /components
-          and /components/dynamic-breadcrumb
+          Try to change you path to see the how dynamic breadcrumb works,
         </h1>
-        <span>or</span>
         <Button variant={"outline"} asChild>
         <div className="flex flex-row items-center gap-2">
           <Link href={"/components/dynamic-breadcrumb/foo"}>See the Foo</Link>
