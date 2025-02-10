@@ -8,6 +8,7 @@ import {
   BreadcrumbLink,
   BreadcrumbList,
   BreadcrumbPage,
+  BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
 import { cn } from "@/lib/utils";
 type IconProps = React.HTMLAttributes<SVGElement>;
@@ -56,7 +57,7 @@ export const DynamicBreadcrumb = React.forwardRef<
       allowSeparator: separator = true,
       formatLabel,
       Separator = ChevronRightIcon,
-      separatorClassName = "w-3.5 h-3.5",
+      separatorClassName,
       ...props
     },
     ref
@@ -118,9 +119,13 @@ export const DynamicBreadcrumb = React.forwardRef<
                allowing flexibility of your own styles.
                example: <DynamicBreadcrumb Separator={YourCustomSeparator} />
                */
-               <BreadcrumbItem>
-                  <Separator className={cn(separatorClassName)} />
-               </BreadcrumbItem>
+                  <BreadcrumbSeparator>
+                    <Separator
+                      role="presentation"
+                      aria-hidden="true"
+                      className={cn("w-3.5 h-3.5", separatorClassName)}
+                    />
+                  </BreadcrumbSeparator>
                 )}
               </React.Fragment>
             );
