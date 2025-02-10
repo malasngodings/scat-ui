@@ -2,7 +2,7 @@ import * as React from "react";
 import { OpenInV0Button } from "@/components/open-in-v0-button";
 import { ExampleForm } from "@/registry/example-form/example-form";
 import PokemonPage from "@/registry/complex-component/page";
-import { ModeToggle } from "@/components/mode-toggle";
+
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
@@ -18,7 +18,6 @@ export default function Home() {
           <h1 className="text-3xl font-bold tracking-tight">Scat UI</h1>
           <p className="text-muted-foreground">Scat Cwk Ber4k Indo</p>
         </div>
-        <ModeToggle />
       </header>
       <main className="flex flex-col flex-1 gap-8">
         <div className="flex flex-col gap-4 border rounded-lg p-4 min-h-[450px] relative">
