@@ -8,7 +8,7 @@ export default function DynamicBreadCrumbPage() {
 
   return (
     <div>
-      <div className="flex flex-row items-center gap-3">
+      <div className="flex flex-wrap-reverse items-center gap-3">
         <h1 className="text-base text-muted-foreground font-semibold">
           Try to change you path to see the how dynamic breadcrumb works,
         </h1>

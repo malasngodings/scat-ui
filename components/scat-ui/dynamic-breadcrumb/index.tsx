@@ -30,7 +30,7 @@ const ChevronRightIcon: React.FC<React.SVGProps<SVGElement>> = (
   </svg>
 );
 
-interface BaseProps extends React.ComponentPropsWithoutRef<"nav"> {
+interface BaseProps extends React.ComponentPropsWithoutRef<typeof Breadcrumb> {
   pathname: string;
   formatLabel?: (label: string) => string;
   separatorClassName?: string;
@@ -53,7 +53,6 @@ export const DynamicBreadcrumb = React.forwardRef<
     {
       pathname,
       className,
-
       allowSeparator: separator = true,
       formatLabel,
       Separator = ChevronRightIcon,
@@ -136,5 +135,7 @@ export const DynamicBreadcrumb = React.forwardRef<
     );
   }
 );
+
+
 
 DynamicBreadcrumb.displayName = "DynamicBreadcrumb";

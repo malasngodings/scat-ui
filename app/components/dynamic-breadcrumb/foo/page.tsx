@@ -3,7 +3,7 @@ import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 export default function FooPage() {
   return (
-    <main className="flex items-center gap-3 justify-center ">
+    <main className="flex items-center flex-wrap-reverse gap-3 justify-center ">
       <div>Hello from Foo</div>
       <Button variant={"outline"} asChild>
         <div className="flex flex-row items-center gap-2">

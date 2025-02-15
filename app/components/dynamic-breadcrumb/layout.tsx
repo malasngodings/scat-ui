@@ -1,4 +1,4 @@
-import DynamicBreadCrumbExample from "@/components/scat-ui/dynamic-breadcrumb/example";
+import DynamicBreadCrumbExample from "@/registry/dynamic-breadcrumb/example";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 
 export default function DynamicBreadCrumbLayout({

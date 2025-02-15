@@ -4,14 +4,14 @@
   "homepage": "https://acme.com",
   "items": [
     {
-      "name": "hello-world",
+      "name": "dynamic-breadcrumb",
       "type": "registry:component",
-      "title": "Hello World",
-      "description": "A simple hello world component",
-      "registryDependencies": ["button"],
+      "title": "Dynamic Breadcrumb",
+      "description": "A simple reusable dynamic breadcrumb component .",
+      "registryDependencies": ["breadcrumb", "lucide-react"],
       "files": [
         {
-          "path": "registry/hello-world/hello-world.tsx",
+          "path": "registry/dynamic-breadcrumb/example.tsx",
           "type": "registry:component"
         }
       ]

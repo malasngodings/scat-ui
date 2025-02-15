@@ -4,7 +4,7 @@ import Link from "next/link";
 const data = { example: "slug-foo-bar" };
 export default function BarPage() {
   return (
-    <main className="flex items-center gap-3 justify-center ">
+    <main className="flex items-center flex-wrap-reverse gap-3 justify-center ">
       <div>Hello from Bar</div>
       <Button variant={"outline"} asChild>
         <div className="flex flex-row items-center gap-2">
