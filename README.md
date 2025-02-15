@@ -1,20 +1,49 @@
-# registry-template
+# Scat UI
 
-You can use the `shadcn` CLI to run your own component registry. Running your own
-component registry allows you to distribute your custom components, hooks, pages, and
-other files to any React project.
+Scat UI is a UI library built on top of Shadcn, designed to create dynamic components as fast as lightning ⚡.
 
-## Getting Started
+## 1. How to Use
 
-This is a template for creating a custom registry using Next.js.
+Clone the repository:
 
-- The template uses a `registry.json` file to define components and their files.
-- The `shadcn build` command is used to build the registry.
-- The registry items are served as static files under `public/r/[name].json`.
-- The template also includes a route handler for serving registry items.
-- Every registry item are compatible with the `shadcn` CLI.
-- We have also added v0 integration using the `Open in v0` api.
+```bash
+git clone https://github.com/malasngodings/scat-ui.git
+```
 
-## Documentation
+## 2. Copy Components
 
-Visit the [shadcn documentation](https://ui.shadcn.com/docs/registry) to view the full documentation.
+Go to /components/scat-ui, copy and paste the component that you want to your project.
+
+## 3.  Ensure Shadcn is Installed
+
+Make sure Shadcn is installed with the necessary components. If you haven’t installed it yet, run:
+
+```bash
+pnpm dlx shadcn@latest init
+pnpm dlx shadcn@latest add {component}
+```
+
+You can find the complete documentation here: [Shadcn UI Docs](https://ui.shadcn.com/docs)
+
+## 4.  Using Components from the Registry
+
+Scat UI provides a /registry/ directory where you can preview and explore available components before using them in your project.
+
+To use a component:
+
+1. Navigate to /registry/.
+2. Browse and select a component.
+3. Copy the component's code and integrate it into your project.
+
+## Continuous Updates & Maintenance
+
+Scat UI is actively maintained and will be progressively updated with new features, improvements, and bug fixes. We are committed to keeping the library up-to-date and enhancing its performance over time.
+
+## Contributing
+
+Pull requests are welcome. For major changes, please open an issue first
+to discuss what you would like to change.
+
+## License
+
+[MIT](https://choosealicense.com/licenses/mit/)
